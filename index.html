@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Clonador - FKS</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+    const translations = {
+        pt: {
+            welcome: "Seja bem-vindo ao seu novo Controle Clonador",
+            manual: "Manual de Cadastro e Certificado de Garantia",
+            support: "Falar com suporte técnico via WhatsApp",
+            video: "Acessar vídeo explicativo no YouTube"
+        },
+        es: {
+            welcome: "Bienvenido a su nuevo Control Clonador",
+            manual: "Manual de Registro y Certificado de Garantía",
+            support: "Hablar con soporte técnico por WhatsApp",
+            video: "Acceder al video explicativo en YouTube"
+        }
+    };
+
+    function changeLanguage(lang) {
+        document.getElementById('welcome-text').textContent = translations[lang].welcome;
+        document.getElementById('manual-link').textContent = translations[lang].manual;
+        document.getElementById('support-link').textContent = translations[lang].support;
+        document.getElementById('video-link').textContent = translations[lang].video;
+        
+        if (lang === 'es') {
+            document.getElementById('manual-link').href = "https://www.fks.com.br/manuais/copiador/garantia-copiador-ES.pdf";
+        } else {
+            document.getElementById('manual-link').href = "https://www.fks.com.br/manuais/copiador/garantia-copiador.pdf";
+        }
+    
+    }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Logo da FKS -->
+        <img src="https://www.fks.com.br/_nuxt/fks_logo.b56ef986.png" alt="Logo FKS" height="90" width="360"><br>
+        <img src="https://www.fks.com.br/manuais/copiador/CORES-CONTROLES.png" alt="Controle FKS" height="180" width="360">
+
+        <!-- Links com textos que serão alterados -->
+        <div class="link">
+            <label id="welcome-text">Seja bem-vindo ao seu novo Controle Clonador</label>
+            <div><a href="https://www.fks.com.br/manuais/copiador/garantia-copiador.pdf" id="manual-link">Manual de Cadastro e Certificado de Garantia</a></div>
+            <div><a href="https://api.whatsapp.com/send?phone=555198334922" id="support-link">Falar com suporte técnico via WhatsApp</a></div>
+            <div><a href="https://www.youtube.com/watch?v=zPkw1v13pNQ&t=84s" id="video-link">Acessar vídeo explicativo no YouTube</a></div>
+        </div><br><br>
+
+        <!-- Bandeiras para seleção de idioma -->
+        <div class="flags">
+            <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="changeLanguage('pt')">
+            <img src="https://flagcdn.com/w40/es.png" alt="Español" onclick="changeLanguage('es')">
+        </div>
+    </div>
+
+</body>
+</html>
